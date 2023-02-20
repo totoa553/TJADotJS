@@ -1,3 +1,4 @@
+import { ChartInfo } from "./ChartInfo"
 
 export class Chart{
     CommonHeader: Header[];
