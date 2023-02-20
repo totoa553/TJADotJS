@@ -1,5 +1,6 @@
 import { ChartInfo } from "./ChartInfo"
 import { Chip } from "./Chip";
+import { CourseInfo } from "./CourseInfo";
 
 export class Chart{
     CommonHeader!: Header[];
