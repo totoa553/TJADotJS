@@ -2,102 +2,71 @@
  * 譜面情報クラス
  */
 export class ChartInfo{
-    Title: string;
-    SubTitle: string;
-    SubTitleMode: SubTitleModes;
-    BPM: number;
-    Wave: string;
-    Offset: number;
-    DemoStart: number;
-    Genre: string;
-    SongVol: number;
-    SeVol: number;
-    ScoreMode: ScoreModes;
-    Side: Sides;
-    Life: number;
-    BgImage: string;
-    BgMovie: string;
-    MovieOffset: number;
+    /**
+     * 譜面のタイトル
+     */
+    Title: string | undefined;
+    /**
+     * 譜面のサブタイトル
+     */
+    SubTitle: string | undefined;
+    /**
+     * サブタイトルの表示方式
+     */
+    SubTitleMode: SubTitleModes | undefined;
+    /**
+     * 基本BPM
+     */
+    BPM: number | undefined;
+    /**
+     * 音源ファイル
+     */
+    Wave: string | undefined;
+    /**
+     * オフセット
+     */
+    Offset: number | undefined;
+    /**
+     * デモ音源再生開始時間
+     */
+    DemoStart: number | undefined;
+    /**
+     * ジャンル
+     */
+    Genre: string | undefined;
+    /**
+     * 曲音量
+     */
+    SongVol: number | undefined;
+    /**
+     * 効果音量
+     */
+    SeVol: number | undefined;
+    /**
+     * 配点方式
+     */
+    ScoreMode: ScoreModes | undefined;
+    /**
+     * 表譜面・裏譜面
+     */
+    Side: Sides | undefined;
+    /**
+     * 残基
+     */
+    Life: number | undefined;
+    /**
+     * 背景画像
+     */
+    BgImage: string | undefined;
+    /**
+    　* 背景動画
+    　*/
+    BgMovie: string | undefined;
+    /**
+     * 背景動画のオフセット
+     */
+    MovieOffset: number | undefined;
     constructor(){
-        /**
-         * 譜面のタイトル
-         */
-        this.Title = "";
-
-        /**
-         * 譜面のサブタイトル
-         */
-        this.SubTitle = "";
-
-        /**
-         * サブタイトルの表示方式
-         */
-        this.SubTitleMode = SubTitleModes.Show;
-
-        /**
-         * 基本BPM
-         */
-        this.BPM = 0;
-
-        /**
-         * 音源ファイル
-         */
-        this.Wave = "";
-
-        /**
-         * オフセット
-         */
-        this.Offset = 0;
-
-        /**
-         * デモ音源再生開始時間
-         */
-        this.DemoStart = 0;
-
-        /**
-         * ジャンル
-         */
-        this.Genre = "";
-
-        /**
-         * 曲音量
-         */
-        this.SongVol = 0;
-
-        /**
-         * 効果音量
-         */
-        this.SeVol = 0;
-
-        /**
-         * 配点方式
-         */
-        this.ScoreMode = ScoreModes.Gen3;
-
-        /**
-         * 表譜面・裏譜面
-         */
-        this.Side = Sides.Both;
-
-        /**
-         * 残基
-         */
-        this.Life = 0;
-
-        /**
-         * 背景画像
-         */
-        this.BgImage = "";
-
-        /**
-         * 背景動画
-         */
-        this.BgMovie = "";
-
-        /**
-         * 背景動画のオフセット
-         */
-        this.MovieOffset = 0;
     }
 }
 
