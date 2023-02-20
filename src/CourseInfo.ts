@@ -49,7 +49,7 @@ export class CourseInfo{
     /**
      * ゲージ増加量モード
      */
-    GaugeInncrease!: Gauges;
+    GaugeIncrease!: Gauges;
     /**
      * 総音符あたりの総ゲージ量
      */

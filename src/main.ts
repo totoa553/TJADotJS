@@ -283,7 +283,7 @@ export class TJADotJS {
       this.chart.Courses.forEach (function(course: Course){
         course.Headers.forEach (function(item: Header){
           function header(name: string){
-            return name == item.Name.Trim();
+            return name == item.Name.trim();
           }
           var result,shin;
           if (header("COURSE")){
@@ -311,7 +311,7 @@ export class TJADotJS {
               {
                   if (result = parseInt(split[ii]))
                   {
-                      course.Info.Balloon.Add(result);
+                      course.Info.Balloon.push(result);
                   }
               }
           }
@@ -531,9 +531,9 @@ export class TJADotJS {
         this.chart.Courses.forEach (function(course: Course){
           function parseTJA(list: Chip[],measures: string[])
           {
-              var nowTime = (this.chart.Info.Offset * 1000 * 1000) * -1;
+              var nowTime = (parentthis.chart.Info.Offset * 1000 * 1000) * -1;
               var nowScroll = 1.0;
-              var nowBPM = this.chart.Info.BPM;
+              var nowBPM = parentthis.chart.Info.BPM;
               var gogoTime = false;
               var branching = false;
               var nowBranch = Branches.Normal;
