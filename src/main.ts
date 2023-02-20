@@ -1,3 +1,6 @@
+import { Chart,Header,Course } from "./Chart";
+import { ScoreModes,Sides,SubTitleModes } from "./ChartInfo";
+import { Chip } from "./Chip";
 
 /**
 * .tjaフォーマットの読み込みからパースまでを担当するメインクラス。
@@ -21,11 +24,10 @@ export class TJADotJS {
 
     // 共通ヘッダを取り出して coursesに投げる。
     var commonHeader = splitedCourses[0];
-    var courses = new string[splitedCourses.length - 1];
-    courses = splitedCourses.slice(1);
+    var courses = splitedCourses.slice(1);
 
     // 共通ヘッダのパース
-    chart.CommonHeader = this.GetHeaderFromString(commonHeader);
+    this.chart.CommonHeader = this.GetHeaderFromString(commonHeader);
 
     var parentthis = this;
     // 各コースのパース
@@ -35,22 +37,22 @@ export class TJADotJS {
         var headerList = parentthis.GetHeaderFromString(header);
         if (first)
         {
-            chart.Courses.push(new Course(headerList, text));
+          parentthis.chart.Courses.push(new Course(headerList, text));
         }
         if (side == "")
         {
             // #START だった
-            chart.Courses[i].Measure.Common = getMeasureThisPlayerSide(text);
+            parentthis.chart.Courses[i].Measure.Common = getMeasureThisPlayerSide(text);
         }
         else if (side == "P1")
         {
             // #START P1だった
-            chart.Courses[i].Measure.Player1 = getMeasureThisPlayerSide(text);
+            parentthis.chart.Courses[i].Measure.Player1 = getMeasureThisPlayerSide(text);
         }
         else if (side == "P2")
         {
             // #START P2だった
-            chart.Courses[i].Measure.Player2 = getMeasureThisPlayerSide(text);
+            parentthis.chart.Courses[i].Measure.Player2 = getMeasureThisPlayerSide(text);
         }
         if (!!remain)
         {
@@ -61,7 +63,7 @@ export class TJADotJS {
           var nowMeasure = "";
           var measures = new Array();
           for(var nowLine in playerMeasure.split("\n")){
-            if (nowLine.trim().IndexOf(",") > -1)
+            if (nowLine.trim().indexOf(",") > -1)
             {
               // 行にカンマがある
               if (nowLine.trim().startsWith("#"))
@@ -113,14 +115,14 @@ export class TJADotJS {
         }
         setComposite(courses[i], true);
       };
-      Chart.CommonHeader.forEach(function(common: Header){
+      this.chart.CommonHeader.forEach(function(common: Header){
         function header(name: string)
         {
                     return name == common.Name.trim();
         }
         function subtitler(value: string)
         {
-          var subtitleMode;
+          var subtitleMode: SubTitleModes;
           if (value.startsWith("--") || value.startsWith("++"))
           {
             var trimedValue = value.substring(2);
@@ -143,54 +145,54 @@ export class TJADotJS {
         var result;
         if (header("TITLE"))
         {
-            chart.Info.Title = common.Value;
+          parentthis.chart.Info.Title = common.Value;
         }
         else if (header("SUBTITLE"))
         {
-            chart.Info.SubTitle = subtitler(common.Value)[0];
-            chart.Info.SubTitleMode = subtitler(common.Value)[1];
+          parentthis.chart.Info.SubTitle = subtitler(common.Value)[0];
+          parentthis.chart.Info.SubTitleMode = subtitler(common.Value)[1];
         }
         else if (header("BPM"))
         {
           if (result = parseFloat(common.Value))
           {
-              chart.Info.BPM = result;
+            parentthis.chart.Info.BPM = result;
           }
         }
         else if (header("WAVE"))
         {
-            chart.Info.Wave = common.Value;
+          parentthis.chart.Info.Wave = common.Value;
         }
         else if (header("OFFSET"))
         {
             if (result = parseFloat(common.Value))
             {
-                            chart.Info.Offset = result;
+              parentthis.chart.Info.Offset = result;
             }
         }
         else if (header("DEMOSTART"))
         {
             if (result = parseFloat(common.Value))
             {
-                            chart.Info.DemoStart = result;
+              parentthis.chart.Info.DemoStart = result;
             }
         }
         else if (header("GENRE"))
         {
-            chart.Info.Genre = common.Value;
+          parentthis.chart.Info.Genre = common.Value;
         }
         else if (header("SONGVOL"))
         {
             if (result = parseInt(common.Value))
             {
-              chart.Info.SongVol = result;
+              parentthis.chart.Info.SongVol = result;
             }
         }
         else if (header("SEVOL"))
         {
             if (result = parseInt(common.Value))
             {
-              chart.Info.SeVol = result;
+              parentthis.chart.Info.SeVol = result;
             }
         }
         else if (header("SCOREMODE"))
@@ -200,16 +202,16 @@ export class TJADotJS {
               switch (result)
               {
                   case 0:
-                      chart.Info.ScoreMode = ScoreModes.Gen1;
+                    parentthis.chart.Info.ScoreMode = ScoreModes.Gen1;
                       break;
                   case 1:
-                      chart.Info.ScoreMode = ScoreModes.Gen2;
+                    parentthis.chart.Info.ScoreMode = ScoreModes.Gen2;
                       break;
                   case 2:
-                      chart.Info.ScoreMode = ScoreModes.Gen3;
+                    parentthis.chart.Info.ScoreMode = ScoreModes.Gen3;
                       break;
                   default:
-                      chart.Info.ScoreMode = ScoreModes.Gen3;
+                    parentthis.chart.Info.ScoreMode = ScoreModes.Gen3;
                       break;
               }
             }
@@ -221,16 +223,16 @@ export class TJADotJS {
             switch (result)
             {
               case 0:
-                chart.Info.Side = Sides.Normal;
+                parentthis.chart.Info.Side = Sides.Normal;
                 break;
               case 1:
-                chart.Info.Side = Sides.Extra;
+                parentthis.chart.Info.Side = Sides.Extra;
                 break;
               case 2:
-                chart.Info.Side = Sides.Both;
+                parentthis.chart.Info.Side = Sides.Both;
                 break;
               default:
-                chart.Info.Side = Sides.Both;
+                parentthis.chart.Info.Side = Sides.Both;
                 break;
             }
           }
@@ -239,16 +241,16 @@ export class TJADotJS {
             switch (common.Value)
             {
                 case "NORMAL":
-                        chart.Info.Side = Sides.Normal;
+                  parentthis.chart.Info.Side = Sides.Normal;
                         break;
                 case "EX":
-                        chart.Info.Side = Sides.Extra;
+                  parentthis.chart.Info.Side = Sides.Extra;
                         break;
                 case "BOTH":
-                        chart.Info.Side = Sides.Both;
+                  parentthis.chart.Info.Side = Sides.Both;
                         break;
                 default:
-                        chart.Info.Side = Sides.Both;
+                  parentthis.chart.Info.Side = Sides.Both;
                         break;
             }
           }
@@ -257,26 +259,26 @@ export class TJADotJS {
         {
           if (result = parseInt(common.Value))
           {
-            chart.Info.Life = result;
+            parentthis.chart.Info.Life = result;
           }
         }
         else if (header("BGIMAGE"))
         {
-          chart.Info.BgImage = common.Value;
+          parentthis.chart.Info.BgImage = common.Value;
         }
         else if (header("BGMOVIE"))
         {
-          chart.Info.BgMovie = common.Value;
+          parentthis.chart.Info.BgMovie = common.Value;
         }
         else if (header("MOVIEOFFSET"))
         {
           if (result = parseFloat(common.Value))
           {
-            chart.Info.MovieOffset = result;
+            parentthis.chart.Info.MovieOffset = result;
           }
         }
       })
-      chart.Courses.forEach (function(course: Course){
+      this.chart.Courses.forEach (function(course: Course){
         course.Headers.forEach (function(item: Header){
           function header(name: string){
             return name == item.Name.Trim();
@@ -524,10 +526,10 @@ export class TJADotJS {
            }
           })
         })
-        chart.Courses.forEach (function(course: Course){
+        this.chart.Courses.forEach (function(course: Course){
           function parseTJA(list: Chip[],measures: string[])
           {
-              var nowTime = (chart.Info.Offset * 1000 * 1000) * -1;
+              var nowTime = (this.chart.Info.Offset * 1000 * 1000) * -1;
               var nowScroll = 1.0;
               var nowBPM = chart.Info.BPM;
               var gogoTime = false;

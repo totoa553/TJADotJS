@@ -2,13 +2,10 @@ import { ChartInfo } from "./ChartInfo"
 import { Chip } from "./Chip";
 
 export class Chart{
-    CommonHeader: Header[];
-    Courses: Course[];
-    Info: ChartInfo;
+    CommonHeader: Header[] | undefined;
+    Courses: Course[] | undefined;
+    Info: ChartInfo | undefined;
     constructor(){
-        this.CommonHeader = new Array();
-        this.Courses = new Array();
-        this.Info = new ChartInfo();
     }
 }
 
