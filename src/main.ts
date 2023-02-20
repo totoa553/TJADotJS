@@ -1,6 +1,8 @@
 import { Chart,Header,Course } from "./Chart";
 import { ScoreModes,Sides,SubTitleModes } from "./ChartInfo";
 import { Chip } from "./Chip";
+import { CourseConverter } from "./Course";
+import { Conditions, Exam, Gauges, Scopes, Styles } from "./CourseInfo";
 
 /**
 * .tjaフォーマットの読み込みからパースまでを担当するメインクラス。
@@ -380,7 +382,7 @@ export class TJADotJS {
           }
           else if (header("EXAM1") || header("EXAM2") || header("EXAM3"))
           {
-              var split = item.Value.Split(",");
+              var split = item.Value.split(",");
               var exam = new Exam();
               // 条件
               if (split[0] != null)
@@ -467,7 +469,7 @@ export class TJADotJS {
               }
 
               // 最後にEXAM何かを決めて、それに代入。
-              switch (item.Name.Trim())
+              switch (item.Name.trim())
               {
                   case "EXAM1":
                       course.Info.Exam1 = exam;
@@ -531,7 +533,7 @@ export class TJADotJS {
           {
               var nowTime = (this.chart.Info.Offset * 1000 * 1000) * -1;
               var nowScroll = 1.0;
-              var nowBPM = chart.Info.BPM;
+              var nowBPM = this.chart.Info.BPM;
               var gogoTime = false;
               var branching = false;
               var nowBranch = Branches.Normal;

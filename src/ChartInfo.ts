@@ -5,67 +5,67 @@ export class ChartInfo{
     /**
      * 譜面のタイトル
      */
-    Title: string | undefined;
+    Title!: string;
     /**
      * 譜面のサブタイトル
      */
-    SubTitle: string | undefined;
+    SubTitle!: string;
     /**
      * サブタイトルの表示方式
      */
-    SubTitleMode: SubTitleModes | undefined;
+    SubTitleMode!: SubTitleModes;
     /**
      * 基本BPM
      */
-    BPM: number | undefined;
+    BPM!: number;
     /**
      * 音源ファイル
      */
-    Wave: string | undefined;
+    Wave!: string;
     /**
      * オフセット
      */
-    Offset: number | undefined;
+    Offset!: number;
     /**
      * デモ音源再生開始時間
      */
-    DemoStart: number | undefined;
+    DemoStart!: number;
     /**
      * ジャンル
      */
-    Genre: string | undefined;
+    Genre!: string;
     /**
      * 曲音量
      */
-    SongVol: number | undefined;
+    SongVol!: number;
     /**
      * 効果音量
      */
-    SeVol: number | undefined;
+    SeVol!: number;
     /**
      * 配点方式
      */
-    ScoreMode: ScoreModes | undefined;
+    ScoreMode!: ScoreModes;
     /**
      * 表譜面・裏譜面
      */
-    Side: Sides | undefined;
+    Side!: Sides;
     /**
      * 残基
      */
-    Life: number | undefined;
+    Life!: number;
     /**
      * 背景画像
      */
-    BgImage: string | undefined;
+    BgImage!: string;
     /**
     　* 背景動画
     　*/
-    BgMovie: string | undefined;
+    BgMovie!: string;
     /**
      * 背景動画のオフセット
      */
-    MovieOffset: number | undefined;
+    MovieOffset!: number;
     constructor(){
     }
 }

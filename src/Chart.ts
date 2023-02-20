@@ -2,19 +2,19 @@ import { ChartInfo } from "./ChartInfo"
 import { Chip } from "./Chip";
 
 export class Chart{
-    CommonHeader: Header[] | undefined;
-    Courses: Course[] | undefined;
-    Info: ChartInfo | undefined;
+    CommonHeader!: Header[];
+    Courses!: Course[];
+    Info!: ChartInfo;
     constructor(){
     }
 }
 
 export class Course{
-    Headers: Header[] | undefined;
-    Text: string | undefined;
-    Composite_Measure: Composite_Measure | undefined;
-    Composite_Chip: Composite_Chip | undefined;
-    Info: CourseInfo | undefined;
+    Headers!: Header[];
+    Text!: string;
+    Composite_Measure!: Composite_Measure;
+    Composite_Chip!: Composite_Chip;
+    Info!: CourseInfo;
     constructor(headers: Header[],text: string){
         this.Headers = headers;
         this.Text = text;
@@ -22,24 +22,24 @@ export class Course{
 }
 
 export class Composite_Measure{
-    Common: string[] | undefined;
-    Player1: string[] | undefined;
-    Player2: string[] | undefined;
+    Common!: string[];
+    Player1!: string[];
+    Player2!: string[];
     constructor(){
     }
 }
 
 export class Composite_Chip{
-    Common: Chip[] | undefined;
-    Player1: Chip[] | undefined;
-    Player2: Chip[] | undefined;
+    Common!: Chip[];
+    Player1!: Chip[];
+    Player2!: Chip[];
     constructor(){
     }
 }
 
 export class Header{
-    Name: string;
-    Value: string;
+    Name!: string;
+    Value!: string;
     constructor(name:string,value:string){
         this.Name = name;
         this.Value = value;

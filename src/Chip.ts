@@ -5,85 +5,85 @@ export class Chip{
     /**
      * 時間
      */
-    Time: Number | undefined;
+    Time!: Number;
 
     /**
      * チップのタイプ
      */
-    ChipType: Format.Chips.Note | undefined;
+    ChipType!: Format.Chips.Note;
 
     /**
      * 音符のタイプ
      */
-    NoteType: Format.Notes | undefined;
+    NoteType!: Format.Notes;
 
     /**
      * 音符のSE
      */
-    SENote: Format.SENotes | undefined;
+    SENote!: Format.SENotes;
 
     /**
      * 何譜面か
      */
-    Branch: Format.Branches | undefined;
+    Branch!: Format.Branches;
 
     /**
      * 現在分岐中の譜面かどうか
      */
-    Branching: Boolean | undefined;
+    Branching!: Boolean;
 
     /**
      * スクロールスピード
      */
-    Scroll: Number | undefined;
+    Scroll!: Number;
 
     /**
      * BPM
      */
-    BPM: Number | undefined;
+    BPM!: Number;
 
     /**
      * 音符の流れてくる方向（弧度法）
      */
-    Direction: Number | undefined;
+    Direction!: Number;
 
     /**
      * このチップが叩かれたか・判定枠を通ったか
      */
-    IsHitted: Boolean | undefined;
+    IsHitted!: Boolean;
 
     /**
      * このチップが見えるかどうか
      */
-    CanShow: Boolean | undefined;
+    CanShow!: Boolean;
 
     /**
      * このチップがゴーゴータイム中のものか
      */
-    IsGoGoTime: Boolean | undefined;
+    IsGoGoTime!: Boolean;
 
     /**
      * このチップが叩かれたとき、実際の時間とどれくらいの差があったか
      */
-    TimeLag: Number | undefined;
+    TimeLag!: Number;
 
     /**
      * 黄色連打数・風船連打数ノルマ
      */
-    RollCount: Number | undefined;
+    RollCount!: Number;
 
     /**
      * 小節数
      */
-    MeasureCount: Number | undefined;
+    MeasureCount!: Number;
 
     /**
      * Measure
      */
-    Measure: Format.Measure | undefined;
+    Measure!: Format.Measure;
 
     /**
      * 連打の終端
      */
-    RollEnd: Chip | undefined;
+    RollEnd!: Chip;
 }
