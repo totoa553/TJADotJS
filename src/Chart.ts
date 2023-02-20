@@ -13,8 +13,8 @@ export class Chart{
 export class Course{
     Headers!: Header[];
     Text!: string;
-    Composite_Measure!: Composite_Measure;
-    Composite_Chip!: Composite_Chip;
+    Measure!: Composite_Measure;
+    Chip!: Composite_Chip;
     Info!: CourseInfo;
     constructor(headers: Header[],text: string){
         this.Headers = headers;

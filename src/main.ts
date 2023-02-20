@@ -1,10 +1,13 @@
 import { Chart,Header,Course } from "./Chart";
 import { ScoreModes,Sides,SubTitleModes } from "./ChartInfo";
 import { Chip } from "./Chip";
-import { CourseConverter } from "./Course";
+import { CourseConverter, Courses } from "./Course";
 import { Conditions, Exam, Gauges, Scopes, Styles } from "./CourseInfo";
 import { Branches } from "./Format/Branches";
 import { Chips } from "./Format/Chips";
+import { Measure } from "./Format/Measure";
+import { NotesConverter, Notes } from "./Format/Notes";
+import { SENoteGenerator } from "./Format/SENotes";
 
 /**
 * .tjaフォーマットの読み込みからパースまでを担当するメインクラス。
@@ -675,7 +678,7 @@ export class TJADotJS {
                             var param = trimed.substring("#BPMCHANGE".length).trim();
                             if (!!param)
                             {
-                                nowBPM = Convert.ToDouble(param);
+                                nowBPM = parseFloat(param);
                             }
                             chip.ChipType = Chips.BPMChange;
                         }
@@ -731,7 +734,7 @@ export class TJADotJS {
                             beforeMeasureChip.Scroll = list[beforeMeasure].Scroll;
                             beforeMeasureChip.Time = list[beforeMeasure].Time;
                             beforeMeasureChip.IsGoGoTime = list[beforeMeasure].IsGoGoTime;
-                            list.splice(beforeMeasure, beforeMeasureChip);
+                            list.splice(beforeMeasure, 0 , beforeMeasureChip);
                         }
                         else if (command("#BRANCHEND"))
                         {
@@ -858,14 +861,14 @@ export class TJADotJS {
    * TJADotJSで扱う難易度はいくつあるのか。
    */
   get Total_Difficulty(){
-    return this.Chart.course.length;  
+    return Object.keys(Courses).length;  
   } 
 
   /**
    * TJADotNetで扱う譜面分岐数はいくつあるのか。
    */
   get Total_Branches(){
-      return this.Chart.Branches.length;
+      return Object.keys(Branches).length;
   }
 
   /**

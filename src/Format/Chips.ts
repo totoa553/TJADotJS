@@ -8,6 +8,10 @@ export enum Chips{
      */
     Measure,
     /**
+     * スクロール変更
+     */
+    ScrollChange,
+    /**
      * 表紙変更
      */
     MeasureChange,

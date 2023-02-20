@@ -57,7 +57,7 @@ export enum SENotes{
 }
 
 export class SENoteGenerator{
-  static GenerateSENote(chips: Chip[]){
+  static GenerateSENotes(chips: Chip[]){
     for(var i=0;i<=chips.length;i++){
       if(chips[i].NoteType == Notes.Space){
         continue;
