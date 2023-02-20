@@ -11,7 +11,7 @@ export class Chip{
     /**
      * 時間
      */
-    Time!: Number;
+    Time!: number;
 
     /**
      * チップのタイプ
@@ -41,12 +41,12 @@ export class Chip{
     /**
      * スクロールスピード
      */
-    Scroll!: Number;
+    Scroll!: number;
 
     /**
      * BPM
      */
-    BPM!: Number;
+    BPM!: number;
 
     /**
      * 音符の流れてくる方向（弧度法）

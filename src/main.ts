@@ -156,8 +156,8 @@ export class TJADotJS {
         }
         else if (header("SUBTITLE"))
         {
-          parentthis.chart.Info.SubTitle = subtitler(common.Value)[0];
-          parentthis.chart.Info.SubTitleMode = subtitler(common.Value)[1];
+          parentthis.chart.Info.SubTitle = subtitler(common.Value)[0] as string;
+          parentthis.chart.Info.SubTitleMode = subtitler(common.Value)[1] as SubTitleModes;
         }
         else if (header("BPM"))
         {

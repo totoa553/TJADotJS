@@ -119,9 +119,11 @@ export class SENoteGenerator{
     var beforeChip = this.GetBeforeChip(i, chips);
     var afterChip = this.GetAfterChip(i, chips);
 
-    var nowTime = nowChip.Time;
-    var diffBefore:number = nowTime - beforeChip.Time;
-    var diffAfter:number = afterChip.Time - nowTime;
+    var nowTime = nowChip.Time as number;
+    var beforeTime = beforeChip ? beforeChip.Time : 0;
+    var afterTime = afterChip ? afterChip.Time : 0;
+    var diffBefore:number = nowTime - beforeTime;
+    var diffAfter:number = afterTime - nowTime;
 
     var time12 = (nowChip.Measure.GetRate() / nowChip.BPM / 12 * 1000 * 1000.0);
 
