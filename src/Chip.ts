@@ -1,3 +1,9 @@
+import { Branches } from "./Format/Branches";
+import { Chips } from "./Format/Chips"
+import { Notes } from "./Format/Notes";
+import { Measure } from "./Format/Measure";
+import { SENotes } from "./Format/SENotes";
+
 /**
  * チップのクラス
  */
@@ -10,22 +16,22 @@ export class Chip{
     /**
      * チップのタイプ
      */
-    ChipType!: Format.Chips.Note;
+    ChipType!: Chips;
 
     /**
      * 音符のタイプ
      */
-    NoteType!: Format.Notes;
+    NoteType!: Notes;
 
     /**
      * 音符のSE
      */
-    SENote!: Format.SENotes;
+    SENote!: SENotes;
 
     /**
      * 何譜面か
      */
-    Branch!: Format.Branches;
+    Branch!: Branches;
 
     /**
      * 現在分岐中の譜面かどうか
@@ -46,6 +52,13 @@ export class Chip{
      * 音符の流れてくる方向（弧度法）
      */
     Direction!: Number;
+
+    /**
+     * 音符であるかどうか
+     */
+    get IsNote(){
+        return this.ChipType == Chips.Note;
+    }
 
     /**
      * このチップが叩かれたか・判定枠を通ったか
@@ -80,10 +93,17 @@ export class Chip{
     /**
      * Measure
      */
-    Measure!: Format.Measure;
+    Measure!: Measure;
 
     /**
      * 連打の終端
      */
     RollEnd!: Chip;
+
+    toString(){
+        var s = this.IsNote
+            ? `Time: ${this.Time} / NoteType: ${this.NoteType} / Branch: ${this.Branch} / IsGoGoTime: ${this.IsGoGoTime}`
+            : `Time: ${this.Time} / ChipType: ${this.ChipType} / Branch: ${this.Branch} / IsGoGoTime: ${this.IsGoGoTime}`;
+        return s;
+    }
 }

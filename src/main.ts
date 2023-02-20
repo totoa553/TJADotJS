@@ -3,6 +3,8 @@ import { ScoreModes,Sides,SubTitleModes } from "./ChartInfo";
 import { Chip } from "./Chip";
 import { CourseConverter } from "./Course";
 import { Conditions, Exam, Gauges, Scopes, Styles } from "./CourseInfo";
+import { Branches } from "./Format/Branches";
+import { Chips } from "./Format/Chips";
 
 /**
 * .tjaフォーマットの読み込みからパースまでを担当するメインクラス。
