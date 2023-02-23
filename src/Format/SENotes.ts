@@ -58,7 +58,7 @@ export enum SENotes{
 
 export class SENoteGenerator{
   static GenerateSENotes(chips: Chip[]){
-    for(var i=0;i<=chips.length;i++){
+    for(var i=0;i<chips.length;i++){
       if(chips[i].NoteType == Notes.Space){
         continue;
       }
@@ -125,7 +125,7 @@ export class SENoteGenerator{
     var diffBefore:number = nowTime - beforeTime;
     var diffAfter:number = afterTime - nowTime;
 
-    var time12 = (nowChip.Measure.GetRate() / nowChip.BPM / 12 * 1000 * 1000.0);
+    var time12 = ((nowChip.Measure?nowChip.Measure.GetRate():240) / nowChip.BPM / 12 * 1000 * 1000.0);
 
     if (diffBefore > time12 && diffAfter > time12)
     {

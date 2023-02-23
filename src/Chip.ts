@@ -51,7 +51,7 @@ export class Chip{
     /**
      * 音符の流れてくる方向（弧度法）
      */
-    Direction!: Number;
+    Direction!: number;
 
     /**
      * 音符であるかどうか
@@ -78,17 +78,17 @@ export class Chip{
     /**
      * このチップが叩かれたとき、実際の時間とどれくらいの差があったか
      */
-    TimeLag!: Number;
+    TimeLag!: number;
 
     /**
      * 黄色連打数・風船連打数ノルマ
      */
-    RollCount!: Number;
+    RollCount!: number;
 
     /**
      * 小節数
      */
-    MeasureCount!: Number;
+    MeasureCount!: number;
 
     /**
      * Measure

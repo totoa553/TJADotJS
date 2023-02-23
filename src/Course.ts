@@ -35,7 +35,7 @@ export class CourseConverter{
      * @param number 整数
      * @returns コース名
      */
-    static GetCoursesFromNumber(number:Number){
+    static GetCoursesFromNumber(number:number){
         switch(number){
             case 0: return Courses.Easy;
             case 1: return Courses.Normal;

@@ -9,23 +9,23 @@ export class CourseInfo{
     /**
      * 難易度
      */
-    Level!: Number;
+    Level!: number;
     /**
      * 風船連打
      */
-    Balloon!: Number[];
+    Balloon: number[] = [];
     /**
      * 初項
      */
-    ScoreInit!: Number;
+    ScoreInit!: number;
     /**
      * 真打配点時の初項
      */
-    ScoreInit_Shinuchi!: Number;
+    ScoreInit_Shinuchi!: number;
     /**
      * 公差
      */
-    ScoreDiff!: Number;
+    ScoreDiff!: number;
     /**
      * 譜面スタイル
      */
@@ -53,7 +53,7 @@ export class CourseInfo{
     /**
      * 総音符あたりの総ゲージ量
      */
-    Total!: Number;
+    Total!: number;
     /**
      * 譜面分岐を分岐時まで隠す
      */
@@ -89,11 +89,11 @@ export class Exam{
     /**
      * 赤合格の閾値
      */
-    RedValue!: Number;
+    RedValue!: number;
     /**
      * 金合格の閾値
      */
-    GoldValue!: Number;
+    GoldValue!: number;
 }
 
 /**
@@ -201,9 +201,9 @@ export class NextSong{
     /**
      * 初項
      */
-    ScoreInit!: Number;
+    ScoreInit!: number;
     /**
      * 公差
      */
-    ScoreDiff!: Number;
+    ScoreDiff!: number;
 }
