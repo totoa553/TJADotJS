@@ -38,7 +38,39 @@ export enum Notes{
     /**
      * くすだま
      */
-    Kusudama
+    Kusudama,
+    /**
+     * 手つなぎ音符(ドン) (#1)
+     */
+    JointDon,
+    /**
+     * 手つなぎ音符(カッ) (#1)
+     */
+    JointKa,
+    /**
+     * 爆弾音符 (#1)
+     */
+    Mine,
+    /**
+     * Fuse Roll (#1)
+     */
+    FuseRoll,
+    /**
+     * アドリブ(#1)
+     */
+    ADLIB,
+    /**
+     * 面縁両押し(#1)
+     */
+    DoubleHit,
+    /**
+     * Konga Clap Roll | Taiko big Roll (#1)
+     */
+    KongaROLL,
+    /**
+     * Konga yellow roll | Taiko small roll (#1)
+     */
+    KongaRoll,
 }
 
 export class NotesConverter{
@@ -55,6 +87,14 @@ export class NotesConverter{
             case '7': return Notes.Balloon;
             case '8': return Notes.RollEnd;
             case '9': return Notes.Kusudama;
+            case 'A': return Notes.JointDon;
+            case 'B': return Notes.JointKa;
+            case 'C': return Notes.Mine;
+            case 'D': return Notes.FuseRoll;
+            case 'F': return Notes.ADLIB;
+            case 'G': return Notes.DoubleHit;
+            case 'H': return Notes.KongaROLL;
+            case 'I': return Notes.KongaRoll;
             default: return Notes.Space;
         } 
     }

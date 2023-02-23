@@ -389,7 +389,7 @@ export default class {
                   }
               }
           }
-          else if (header("EXAM1") || header("EXAM2") || header("EXAM3"))
+          else if (header("EXAM1") || header("EXAM2") || header("EXAM3") || header("EXAM4") || header("EXAM5") || header("EXAM6") || header("EXAM7"))
           {
               var split = item.Value.split(",");
               var exam = new Exam();
@@ -421,6 +421,15 @@ export default class {
                           break;
                       case "c":
                           exam.Condition = Conditions.Combo;
+                          break;
+                      case "a":
+                          exam.Condition = Conditions.Accuracy;
+                          break;
+                      case "ja":
+                          exam.Condition = Conditions.JudgeADLIB;
+                          break;
+                      case "jm":
+                          exam.Condition = Conditions.JudgeMine;
                           break;
                       default:
                           exam.Condition = Conditions.Gauge;
@@ -488,6 +497,18 @@ export default class {
                       break;
                   case "EXAM3":
                       course.Info.Exam3 = exam;
+                      break;
+                  case "EXAM4":
+                      course.Info.Exam4 = exam;
+                      break;
+                  case "EXAM5":
+                      course.Info.Exam5 = exam;
+                      break;
+                  case "EXAM6":
+                      course.Info.Exam6 = exam;
+                      break;
+                  case "EXAM7":
+                      course.Info.Exam7 = exam;
                       break;
                   default:
                       throw new Error();
@@ -855,7 +876,6 @@ export default class {
         break;
       }
     }
-    console.log([splitHeader, splitText, remain, side])
     return [splitHeader, splitText, remain, side];
   };
 

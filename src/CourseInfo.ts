@@ -43,6 +43,22 @@ export class CourseInfo{
      */
     Exam3: Exam = new Exam();
     /**
+     * 段位認定モードの条件4(#1)
+     */
+    Exam4: Exam = new Exam();
+    /**
+     * 段位認定モードの条件5(#1)
+     */
+    Exam5: Exam = new Exam();
+    /**
+     * 段位認定モードの条件6(#1)
+     */
+    Exam6: Exam = new Exam();
+    /**
+     * 段位認定モードの条件7(#1)
+     */
+    Exam7: Exam = new Exam();
+    /**
      * 段位認定モードの幕画面リスト
      */
     NextSongs: NextSong[] = new Array();
@@ -131,7 +147,19 @@ export enum Conditions{
     /**
      * 最大コンボ数
      */
-    Combo
+    Combo,
+    /**
+     * 精度(#1)
+     */
+    Accuracy,
+    /**
+     * 叩いたADLIBの数(#1)
+     */
+    JudgeADLIB,
+    /**
+     * 叩いた爆弾音符の数(#1)
+     */
+    JudgeMine,
 }
 
 /**

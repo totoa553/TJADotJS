@@ -12,7 +12,7 @@ export enum Chips{
      */
     ScrollChange,
     /**
-     * 表紙変更
+     * 拍子変更
      */
     MeasureChange,
     /**
@@ -74,5 +74,6 @@ export enum Chips{
     /**
      * 背景画像の変更
      */
-    BGChange
+    BGChange,
+    
 }
