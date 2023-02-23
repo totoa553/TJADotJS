@@ -1,3 +1,3 @@
 import TJA from "./TJADotJS";
 
-console.log(new TJA(""))
+(window as any).TJA = TJA;

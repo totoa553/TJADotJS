@@ -1,11 +1,12 @@
 {
-  "name": "tjadotjs",
-  "private": true,
-  "version": "0.0.0",
+  "name": "@totoa553/tja-parser",
+  "private": false,
+  "version": "0.0.1",
+  "main": "dist/index.js",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "tsc && vite build && mv ./dist/assets/index-*.js ./dist/assets/index.js",
     "preview": "vite preview"
   },
   "devDependencies": {

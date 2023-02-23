@@ -64,8 +64,8 @@ export class SENoteGenerator{
       }
 
       var nowChip = chips[i];
-      var beforeChip = this.GetBeforeChip(i, chips);
-      var afterChip = this.GetAfterChip(i, chips);
+      // var beforeChip = this.GetBeforeChip(i, chips);
+      // var afterChip = this.GetAfterChip(i, chips);
 
       //SENoteつけ始め
       switch(nowChip.NoteType)
