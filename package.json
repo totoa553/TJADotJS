@@ -2,6 +2,7 @@
   "name": "@totoa553/tja-parser",
   "private": false,
   "version": "0.0.1",
+  "description":"A tja parser made in javascript(typescript)",
   "main": "dist/index.js",
   "type": "module",
   "scripts": {
@@ -12,5 +13,8 @@
   "devDependencies": {
     "typescript": "^4.9.3",
     "vite": "^4.1.0"
-  }
+  },
+  "repository": "https://github.com/totoa553/TJADotJS.git",
+  "author": "totoa553 <77469536+totoa553@users.noreply.github.com>",
+  "license": "MIT"
 }
